@@ -1,0 +1,160 @@
+Que1.Write a Python program to remove duplicates from a list.
+
+Ans:-
+mylist = ["a", "b", "a", "c", "c"]
+mylist = list(dict.fromkeys(mylist))
+print(mylist)
+
+Output:['a', 'b', 'c']
+
+Que2.Write a Python program to get the difference between the two lists.
+
+Ans:
+def Diff(li1, li2):
+    return (list(list(set(li1)-set(li2)) + list(set(li2)-set(li1))))
+li1 = [10, 15, 20, 25, 30, 35, 40]
+li2 = [25, 40, 35]
+print(Diff(li1, li2))
+
+Output:-[10, 20, 30, 15]
+
+Que3.write a python program to get the frequency of the elements in a list.
+Ans:
+def CountFrequency(my_list):   
+    freq = {} 
+    for item in my_list: 
+        if (item in freq): 
+            freq[item] += 1
+        else: 
+            freq[item] = 1
+  
+    for key, value in freq.items(): 
+        print ("% d : % d"%(key, value)) 
+if __name__ == "__main__":  
+    my_list =[1, 1, 1, 5, 5, 3, 1, 3, 3, 1, 4, 4, 4, 2, 2, 2, 2] 
+  
+    CountFrequency(my_list) 
+
+Output:
+ 1 :  5
+ 5 :  2
+ 3 :  3
+ 4 :  3
+ 2 :  4
+
+Que4.Write a Python program to compute the similarity between two lists.
+
+Sample data: ["red", "orange", "green", "blue", "white"], ["black", "yellow", "green", "blue"]
+Expected Output:
+Color1-Color2: ['white', 'orange', 'red']
+Color2-Color1: ['black', 'yellow']
+
+Ans:
+def Diff(li1, li2):
+    return (list(list(set(li1)-set(li2)) + list(set(li2)-set(li1))))
+li1 = ["red", "orange", "green", "blue", "white"]
+li2 = ["black", "yellow", "green", "blue"]
+print(Diff(li1, li2))
+
+Output:
+['red', 'white', 'orange', 'yellow', 'black'] 
+
+Que5.Write a Python function that takes a list of words and returns the length of the longest one.
+
+Ans:
+def longestLength(a): 
+    max1 = len(a[0]) 
+    temp = a[0] 
+    for i in a: 
+        if(len(i) > max1): 
+  
+            max1 = len(i) 
+            temp = i 
+  
+    print("The word with the longest length is:", temp, 
+          " and length is ", max1) 
+a = ["one", "two", "third", "four"] 
+longestLength(a) 
+
+Output:
+The word with the longest length is: third  and length is  5
+
+Que6.write a python program to count the occurrences of each word in a given sentence.
+
+Ans:
+def word_count(str):
+    counts = dict()
+    words = str.split()
+
+    for word in words:
+        if word in counts:
+            counts[word] += 1
+        else:
+            counts[word] = 1
+
+    return counts
+
+print( word_count('the quick brown fox jumps over the lazy dog.'))
+
+Output:{'the': 2, 'quick': 1, 'brown': 1, 'fox': 1, 'jumps': 1, 'over': 1, 'lazy': 1, 'dog.': 1}
+
+Que7.Write a Python program to count and display the vowels of a given text.
+
+Ans:
+def Check_Vow(string, vowels): 
+    final = [each for each in string if each in vowels] 
+    print(len(final)) 
+    print(final) 
+string = "I am engineer"
+vowels = "AaEeIiOoUu"
+Check_Vow(string, vowels); 
+
+Output:
+6
+['I', 'a', 'e', 'i', 'e', 'e']
+
+Que8.Write a Python script to generate and print a dictionary that contains a number (between 1 and n) in the form (x, x*x).
+
+Ans:
+n=int(input("Input a number "))
+d = dict()
+
+for x in range(1,n+1):
+    d[x]=x*x
+
+print(d) 
+
+Output:
+Input a number 5
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+Que9.Write a Python program to combine two dictionary adding values for common keys
+● d1 = {'a': 100, 'b': 200, 'c':300}
+● d2 = {'a': 300, 'b': 200, 'd':400}
+● Sample output: Counter({'a': 400, 'b': 400, 'd': 400, 'c': 300})
+
+Ans:
+from collections import Counter
+d1 = {'a': 100, 'b': 200, 'c':300}
+d2 = {'a': 300, 'b': 200, 'd':400}
+d = Counter(d1) + Counter(d2)
+print(d)
+
+Output:
+Counter({'a': 400, 'b': 400, 'd': 400, 'c': 300})
+
+Que10.Write a Python program to print all unique values in a dictionary
+
+● Sample Data : [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"},
+{"V":"S009"},{"VIII":"S007"}]
+● Expected Output : Unique Values: {'S005', 'S002', 'S007', 'S001', 'S009'}
+
+Ans:
+L = [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"},{"VIII":"S007"}]
+print("Original List: ",L)
+u_value = set( val for dic in L for val in dic.values())
+print("Unique Values: ",u_value)
+
+Output:
+Original List:  [{'V': 'S001'}, {'V': 'S002'}, {'VI': 'S001'}, {'VI': 'S005'}, {'VII': 'S005'}, {'V': 'S009'}, {'VIII': 'S007'}]
+Unique Values:  {'S005', 'S002', 'S007', 'S009', 'S001'}
